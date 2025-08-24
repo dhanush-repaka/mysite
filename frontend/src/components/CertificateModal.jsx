@@ -30,7 +30,8 @@ const CertificateModal = ({ isOpen, onClose, certificateData }) => {
           </div>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
+            className="text-gray-400 hover:text-gray-600 transition-colors p-2 rounded-full hover:bg-gray-100"
+            aria-label="Close modal"
           >
             <X size={24} />
           </button>
