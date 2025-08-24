@@ -12,7 +12,7 @@ const Header = ({ data, scrollToSection }) => {
           {/* Professional Photo */}
           <div className="mx-auto w-48 h-48 rounded-full overflow-hidden bg-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+              src="/images/dhanush-profile.jpg"
               alt="Dhanush Repaka"
               className="w-full h-full object-cover"
             />
