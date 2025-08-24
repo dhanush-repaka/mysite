@@ -16,7 +16,7 @@ const Header = ({ data, scrollToSection }) => {
               alt="Dhanush Repaka"
               className="w-full h-full object-cover"
               onError={(e) => {
-                e.target.src = "/images/dhanush-profile-optimized.jpg";
+                e.target.src = "/images/IMG_20220530_120251.jpg";
               }}
             />
           </div>
