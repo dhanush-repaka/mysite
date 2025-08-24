@@ -92,7 +92,7 @@ const Education = ({ data }) => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {data.items.map((item, index) => (
-            <div key={index} className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <div key={index} className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 relative group">
               <div className="flex items-start space-x-4">
                 <div className={`p-3 rounded-full ${getBgColor(item.type)}`}>
                   {getIcon(item.type)}
@@ -114,11 +114,29 @@ const Education = ({ data }) => {
                     </span>
                     <span className="text-sm font-medium text-gray-900">{item.year}</span>
                   </div>
+
+                  {/* View Certificate Button - Only show for items with certificates */}
+                  {certificateData[item.degree] && (
+                    <button
+                      onClick={() => handleViewCertificate(item)}
+                      className="mt-4 w-full bg-blue-50 hover:bg-blue-100 text-blue-700 px-4 py-2 rounded-lg flex items-center justify-center space-x-2 transition-colors group-hover:bg-blue-100"
+                    >
+                      <Eye size={16} />
+                      <span className="text-sm font-medium">View Certificate</span>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Certificate Modal */}
+        <CertificateModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          certificateData={selectedCertificate}
+        />
       </div>
     </section>
   );
