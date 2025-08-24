@@ -1,10 +1,62 @@
 import React from "react";
-import { GraduationCap, Award } from "lucide-react";
+import { GraduationCap, Award, Briefcase } from "lucide-react";
 
 const Education = ({ data }) => {
+  const getIcon = (type) => {
+    switch (type) {
+      case 'degree':
+        return <GraduationCap className="text-blue-600" size={24} />;
+      case 'certification':
+        return <Award className="text-green-600" size={24} />;
+      case 'internship':
+        return <Briefcase className="text-purple-600" size={24} />;
+      default:
+        return <Award className="text-green-600" size={24} />;
+    }
+  };
+
+  const getBgColor = (type) => {
+    switch (type) {
+      case 'degree':
+        return 'bg-blue-100';
+      case 'certification':
+        return 'bg-green-100';
+      case 'internship':
+        return 'bg-purple-100';
+      default:
+        return 'bg-green-100';
+    }
+  };
+
+  const getBadgeColor = (type) => {
+    switch (type) {
+      case 'degree':
+        return 'bg-blue-100 text-blue-800';
+      case 'certification':
+        return 'bg-green-100 text-green-800';
+      case 'internship':
+        return 'bg-purple-100 text-purple-800';
+      default:
+        return 'bg-green-100 text-green-800';
+    }
+  };
+
+  const getDisplayType = (type) => {
+    switch (type) {
+      case 'degree':
+        return 'Degree';
+      case 'certification':
+        return 'Certification';
+      case 'internship':
+        return 'Internship';
+      default:
+        return 'Certification';
+    }
+  };
+
   return (
     <section className="py-24 bg-gray-50/50">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
             {data.title}
@@ -16,12 +68,8 @@ const Education = ({ data }) => {
           {data.items.map((item, index) => (
             <div key={index} className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-start space-x-4">
-                <div className={`p-3 rounded-full ${item.type === 'degree' ? 'bg-blue-100' : 'bg-green-100'}`}>
-                  {item.type === 'degree' ? (
-                    <GraduationCap className={`${item.type === 'degree' ? 'text-blue-600' : 'text-green-600'}`} size={24} />
-                  ) : (
-                    <Award className="text-green-600" size={24} />
-                  )}
+                <div className={`p-3 rounded-full ${getBgColor(item.type)}`}>
+                  {getIcon(item.type)}
                 </div>
                 
                 <div className="flex-1">
@@ -29,13 +77,14 @@ const Education = ({ data }) => {
                     {item.degree}
                   </h3>
                   <p className="text-gray-600 mb-3">{item.institution}</p>
+                  
+                  {item.details && (
+                    <p className="text-sm text-gray-500 mb-3">{item.details}</p>
+                  )}
+                  
                   <div className="flex items-center justify-between">
-                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                      item.type === 'degree' 
-                        ? 'bg-blue-100 text-blue-800' 
-                        : 'bg-green-100 text-green-800'
-                    }`}>
-                      {item.type === 'degree' ? 'Degree' : 'Certification'}
+                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${getBadgeColor(item.type)}`}>
+                      {getDisplayType(item.type)}
                     </span>
                     <span className="text-sm font-medium text-gray-900">{item.year}</span>
                   </div>
