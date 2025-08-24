@@ -116,6 +116,6 @@ export const mockData = {
     title: "Get In Touch",
     description: "I'm always interested in discussing new opportunities, collaborating on innovative projects, or sharing insights about automation and AI in testing.",
     email: "dhanushrepaka4510@gmail.com",
-    linkedin: "https://linkedin.com/in/dhanush-repaka"
+    linkedin: "https://www.linkedin.com/in/dhanush-repaka/"
   }
 };
