@@ -1,9 +1,9 @@
 export const mockData = {
   header: {
     name: "Dhanush Repaka",
-    tagline: "Automation Specialist | AI Enthusiast | Oxford AI Programme Graduate",
+    tagline: "Test Automation Specialist | AI Enthusiast | Oxford AI Programme Graduate",
     email: "dhanushrepaka4510@gmail.com",
-    linkedin: "https://linkedin.com/in/dhanush-repaka"
+    linkedin: "https://www.linkedin.com/in/dhanush-repaka/"
   },
 
   about: {
