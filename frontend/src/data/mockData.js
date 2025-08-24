@@ -64,6 +64,19 @@ export const mockData = {
         institution: "Oxford University",
         year: "2025",
         type: "certification"
+      },
+      {
+        degree: "Tricentis Tosca Fundamentals - Automating Web Application Testing (AS1)",
+        institution: "Tricentis Certified",
+        year: "2023",
+        type: "certification"
+      },
+      {
+        degree: "Project Internship - Cloud Infrastructure Automation for Test Environments",
+        institution: "Tata Consultancy Services Limited",
+        year: "2019",
+        type: "internship",
+        details: "3-month internship (Jan-Mar 2019) under Accelerator brand, Chennai"
       }
     ]
   },
