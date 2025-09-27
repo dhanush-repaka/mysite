@@ -11,19 +11,31 @@ const Education = ({ data }) => {
       title: "Tricentis Tosca Fundamentals - Automating Web Application Testing (AS1)",
       issuer: "Tricentis Certified",
       pdfUrl: "/images/certificates/tosca-cert.pdf",
-      fileName: "tosca-certification.pdf"
+      fileName: "tosca-certification.pdf",
+      type: "pdf"
     },
     "Project Internship - Cloud Infrastructure Automation for Test Environments": {
       title: "Project Internship - Cloud Infrastructure Automation for Test Environments",
       issuer: "Tata Consultancy Services Limited",
       pdfUrl: "/images/certificates/internship-cert.pdf",
-      fileName: "tcs-internship-certificate.pdf"
+      fileName: "tcs-internship-certificate.pdf",
+      type: "pdf"
+    },
+    "Artificial Intelligence Programme": {
+      title: "Oxford Artificial Intelligence Programme",
+      issuer: "University of Oxford",
+      pdfUrl: "https://oxford.credential.getsmarter.com/d80939e7-a755-4f18-8ab8-2ff9abbc4063#acc.W8fj9xq2",
+      fileName: "oxford-ai-programme-certificate",
+      type: "digital"
     },
     "Certified AI Professional (CAIP)": {
       title: "Certified AI Professional (CAIP)",
-      issuer: "University of Oxford",
-      pdfUrl: "/images/certificates/caip-cert.pdf",
-      fileName: "oxford-caip-certificate.pdf"
+      issuer: "oxethica GmbH / University of Oxford",
+      pdfUrl: "https://www.virtualbadge.io/certificate-validator?credential=655aa12f-f46f-40b3-ac31-64a88fe38657",
+      fileName: "caip-certificate",
+      type: "digital",
+      issueDate: "September 5, 2025",
+      credentialId: "655aa12f-f46f-40b3-ac31-64a88fe38657"
     }
   };
 
