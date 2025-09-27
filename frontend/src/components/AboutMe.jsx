@@ -12,19 +12,23 @@ const AboutMe = ({ data }) => {
           <div className="w-16 h-0.5 bg-blue-600 mx-auto"></div>
         </div>
 
+        {/* Full Width Description */}
+        <div className="mb-12">
+          <p className="text-xl text-gray-700 leading-relaxed text-center max-w-5xl mx-auto">
+            {data.description}
+          </p>
+          
+          <p className="text-lg text-gray-600 leading-relaxed text-center max-w-4xl mx-auto mt-6">
+            My passion for test automation stems from witnessing how intelligent testing can transform software quality. 
+            With AI increasingly revolutionizing QA practices, I'm dedicated to bridging the gap between traditional 
+            testing methodologies and cutting-edge AI solutions to create more efficient, reliable testing frameworks.
+          </p>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <p className="text-lg text-gray-700 leading-relaxed">
-              {data.description}
-            </p>
-            
-            <p className="text-gray-600 leading-relaxed">
-              My passion for test automation stems from witnessing how intelligent testing can transform software quality. 
-              With AI increasingly revolutionizing QA practices, I'm dedicated to bridging the gap between traditional 
-              testing methodologies and cutting-edge AI solutions to create more efficient, reliable testing frameworks.
-            </p>
-            
             <div className="space-y-4">
+              <h3 className="text-xl font-medium text-gray-900">Key Expertise</h3>
               {data.highlights.map((highlight, index) => (
                 <div key={index} className="flex items-start space-x-3">
                   <CheckCircle className="text-blue-600 mt-0.5 flex-shrink-0" size={20} />
@@ -33,7 +37,7 @@ const AboutMe = ({ data }) => {
               ))}
             </div>
 
-            {/* Professional Badges - Simple Version */}
+            {/* Professional Badges with Real Images */}
             <div className="pt-6">
               <h3 className="text-lg font-medium text-gray-900 mb-4 flex items-center">
                 <Award className="text-blue-600 mr-2" size={20} />
@@ -41,7 +45,17 @@ const AboutMe = ({ data }) => {
               </h3>
               <div className="flex items-center space-x-6">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <img
+                    src="/images/oxford-badge.png"
+                    alt="Oxford University Badge"
+                    className="w-16 h-16 object-contain mx-auto mb-2"
+                    onError={(e) => {
+                      // Fallback to colored circle if badge image not found
+                      e.target.style.display = 'none';
+                      e.target.nextElementSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="w-12 h-12 bg-blue-600 rounded-full items-center justify-center mx-auto mb-2" style={{ display: 'none' }}>
                     <span className="text-white text-xs font-bold">OX</span>
                   </div>
                   <p className="text-xs text-gray-600">Oxford AI</p>
