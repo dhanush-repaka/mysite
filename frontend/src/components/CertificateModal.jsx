@@ -5,12 +5,18 @@ const CertificateModal = ({ isOpen, onClose, certificateData }) => {
   if (!isOpen || !certificateData) return null;
 
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = certificateData.pdfUrl;
-    link.download = certificateData.fileName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (certificateData.type === 'digital') {
+      // For digital certificates, open in new tab (no download available)
+      window.open(certificateData.pdfUrl, '_blank');
+    } else {
+      // For PDF certificates, trigger download
+      const link = document.createElement('a');
+      link.href = certificateData.pdfUrl;
+      link.download = certificateData.fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   const handleViewInNewTab = () => {
