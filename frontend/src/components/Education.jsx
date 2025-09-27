@@ -114,6 +114,14 @@ const Education = ({ data }) => {
                     <p className="text-sm text-gray-500 mb-3">{item.details}</p>
                   )}
                   
+                  {item.status && (
+                    <div className="mb-3">
+                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        ✓ {item.status}
+                      </span>
+                    </div>
+                  )}
+                  
                   <div className="flex items-center justify-between">
                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${getBadgeColor(item.type)}`}>
                       {getDisplayType(item.type)}
