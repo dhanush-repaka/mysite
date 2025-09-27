@@ -8,7 +8,7 @@ export const mockData = {
 
   about: {
     title: "About Me",
-    description: "I'm an IT Analyst at Tata Consultancy Services with expertise in test automation (Selenium, Appium, Playwright) and a growing focus on AI-driven automation. Passionate about building efficient test frameworks and integrating AI into QA workflows.",
+    description: "I'm an IT Analyst at Tata Consultancy Services with expertise in test automation (Selenium, Appium, Playwright) and AI-driven automation. Successfully completed the Artificial Intelligence Programme from the University of Oxford and achieved Certified AI Professional (CAIP) status. Passionate about integrating cutting-edge AI technologies into QA workflows.",
     highlights: [
       "5+ years of experience in automation testing",
       "Specialized in AI-driven test automation",
