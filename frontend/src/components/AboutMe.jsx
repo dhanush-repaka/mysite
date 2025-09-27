@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Award } from "lucide-react";
 
 const AboutMe = ({ data }) => {
   return (
