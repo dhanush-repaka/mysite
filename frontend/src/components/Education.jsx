@@ -108,6 +108,25 @@ const Education = ({ data }) => {
           <div className="w-16 h-0.5 bg-blue-600 mx-auto"></div>
         </div>
 
+        {/* Professional Badges */}
+        <div className="mb-12 text-center">
+          <h3 className="text-2xl font-light text-gray-900 mb-6">Professional Badges</h3>
+          <div className="flex justify-center items-center space-x-6">
+            {/* Oxford Badge - Will be added when image is uploaded */}
+            <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+              <img
+                src="/images/oxford-badge.png"
+                alt="Oxford University Saïd Business School Online Programme"
+                className="w-20 h-20 object-contain mx-auto"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                }}
+              />
+              <p className="text-xs text-gray-600 mt-2">Oxford Online Programme</p>
+            </div>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-8">
           {data.items.map((item, index) => (
             <div key={index} className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 relative group">
