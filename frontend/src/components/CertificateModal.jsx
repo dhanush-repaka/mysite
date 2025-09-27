@@ -72,13 +72,21 @@ const CertificateModal = ({ isOpen, onClose, certificateData }) => {
                 className="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
               >
                 <Download size={20} />
-                <span>Download PDF</span>
+                <span>
+                  {certificateData.type === 'digital' ? 'Open Certificate' : 'Download PDF'}
+                </span>
               </button>
             </div>
 
             <div className="mt-6 text-xs text-gray-500">
-              <p>File: {certificateData.fileName}</p>
-              <p>Format: PDF Document</p>
+              <p>Certificate: {certificateData.fileName}</p>
+              <p>Format: {certificateData.type === 'digital' ? 'Digital Certificate' : 'PDF Document'}</p>
+              {certificateData.issueDate && (
+                <p>Issued: {certificateData.issueDate}</p>
+              )}
+              {certificateData.credentialId && (
+                <p>ID: {certificateData.credentialId}</p>
+              )}
             </div>
           </div>
         </div>
