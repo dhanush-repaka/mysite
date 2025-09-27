@@ -12,7 +12,7 @@ const Header = ({ data, scrollToSection }) => {
           {/* Professional Photo */}
           <div className="mx-auto w-48 h-48 rounded-full overflow-hidden bg-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <img
-              src="./images/dhanush-profile.jpg"
+              src="images/dhanush-profile.jpg"
               alt="Dhanush Repaka"
               className="w-full h-full object-cover object-center"
               style={{ 
