@@ -8,6 +8,7 @@ import Skills from "./Skills";
 import Contact from "./Contact";
 import BlogSection from "./BlogSection";
 import Navigation from "./Navigation";
+import Footer from "./Footer";
 import { mockData } from "../data/mockData";
 
 const Portfolio = () => {
