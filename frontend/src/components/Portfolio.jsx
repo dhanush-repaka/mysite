@@ -9,7 +9,6 @@ import Contact from "./Contact";
 import BlogSection from "./BlogSection";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
-import ImageDebug from "./ImageDebug";
 import { mockData } from "../data/mockData";
 
 const Portfolio = () => {
