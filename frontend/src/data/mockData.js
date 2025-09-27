@@ -60,10 +60,20 @@ export const mockData = {
         type: "degree"
       },
       {
-        degree: "Oxford Artificial Intelligence Programme",
-        institution: "Oxford University",
+        degree: "Artificial Intelligence Programme",
+        institution: "University of Oxford",
         year: "2025",
-        type: "certification"
+        type: "certification",
+        details: "Successfully completed comprehensive AI programme covering machine learning, ethics, and practical applications",
+        status: "Completed"
+      },
+      {
+        degree: "Certified AI Professional (CAIP)",
+        institution: "University of Oxford",
+        year: "2025",
+        type: "certification",
+        details: "Professional certification demonstrating competency in AI applications, assessment, and risk management",
+        hasCertificate: true
       },
       {
         degree: "Tricentis Tosca Fundamentals - Automating Web Application Testing (AS1)",
