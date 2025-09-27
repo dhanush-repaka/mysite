@@ -74,6 +74,8 @@ const Portfolio = () => {
       <div id="blog" className="section-spacing">
         <BlogSection />
       </div>
+      
+      <Footer />
     </div>
   );
 };
