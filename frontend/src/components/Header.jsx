@@ -48,10 +48,10 @@ const Header = ({ data, scrollToSection }) => {
               href={data.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors duration-300 hover:-translate-y-0.5 transform"
+              className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors duration-300 hover:-translate-y-0.5 transform group"
             >
               <Linkedin size={20} />
-              <span className="text-sm">LinkedIn</span>
+              <span className="text-sm group-hover:underline">Connect on LinkedIn</span>
             </a>
           </div>
 
