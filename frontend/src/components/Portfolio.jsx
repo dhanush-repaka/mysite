@@ -41,7 +41,6 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <ImageDebug />
       <Navigation activeSection={activeSection} scrollToSection={scrollToSection} />
       
       <div id="header">
