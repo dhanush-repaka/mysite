@@ -46,11 +46,12 @@ const AboutMe = ({ data }) => {
               <div className="flex items-center space-x-6">
                 <div className="text-center">
                   <img
-                    src={process.env.PUBLIC_URL + "/images/oxford-badge.png"}
+                    src="./images/oxford-badge.png"
                     alt="Oxford University Badge"
                     className="w-16 h-16 object-contain mx-auto mb-2"
                     onError={(e) => {
                       // Fallback to colored circle if badge image not found
+                      console.log("Oxford badge failed to load, using fallback");
                       e.target.style.display = 'none';
                       e.target.nextElementSibling.style.display = 'flex';
                     }}
