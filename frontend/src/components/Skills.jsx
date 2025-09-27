@@ -56,8 +56,11 @@ const Skills = ({ data }) => {
 
               <div className="space-y-3">
                 {categoryData.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className={`inline-block mr-2 mb-2 px-3 py-2 rounded-lg text-sm font-medium border ${getBadgeColor(categoryData.category)}`}>
-                    {skill}
+                  <div key={skillIndex} className={`inline-block mr-2 mb-2 px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 hover:scale-105 hover:shadow-md ${getBadgeColor(categoryData.category)}`}>
+                    <span className="flex items-center space-x-1">
+                      <span className="w-2 h-2 rounded-full bg-current opacity-60"></span>
+                      <span>{skill}</span>
+                    </span>
                   </div>
                 ))}
               </div>
