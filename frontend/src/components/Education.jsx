@@ -10,7 +10,7 @@ const Education = ({ data }) => {
     "Tricentis Tosca Fundamentals - Automating Web Application Testing (AS1)": {
       title: "Tricentis Tosca Fundamentals - Automating Web Application Testing (AS1)",
       issuer: "Tricentis Certified",
-      pdfUrl: "./images/certificates/tosca-cert.pdf",
+      pdfUrl: "images/certificates/tosca-cert.pdf",
       fileName: "tosca-certification.pdf",
       type: "pdf"
     },
