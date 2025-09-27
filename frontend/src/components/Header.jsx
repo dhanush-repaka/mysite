@@ -16,9 +16,8 @@ const Header = ({ data, scrollToSection }) => {
               alt="Dhanush Repaka"
               className="w-full h-full object-cover object-center"
               style={{ 
-                objectPosition: 'center center',
-                transform: 'scale(1.1)',
-                imageRendering: 'crisp-edges'
+                objectPosition: 'center top',
+                objectFit: 'cover'
               }}
               onError={(e) => {
                 e.target.src = "https://customer-assets.emergentagent.com/job_dhanush-portfolio/artifacts/j20qrn6n_professional-photo.jpg";
