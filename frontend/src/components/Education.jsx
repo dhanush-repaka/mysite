@@ -17,7 +17,7 @@ const Education = ({ data }) => {
     "Project Internship - Cloud Infrastructure Automation for Test Environments": {
       title: "Project Internship - Cloud Infrastructure Automation for Test Environments",
       issuer: "Tata Consultancy Services Limited",
-      pdfUrl: process.env.PUBLIC_URL + "/images/certificates/internship-cert.pdf",
+      pdfUrl: "./images/certificates/internship-cert.pdf",
       fileName: "tcs-internship-certificate.pdf",
       type: "pdf"
     },
