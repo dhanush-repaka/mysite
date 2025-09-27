@@ -12,7 +12,7 @@ const Header = ({ data, scrollToSection }) => {
           {/* Professional Photo */}
           <div className="mx-auto w-48 h-48 rounded-full overflow-hidden bg-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <img
-              src={process.env.PUBLIC_URL + "/images/dhanush-profile-new.jpg"}
+              src="https://customer-assets.emergentagent.com/job_dhanush-portfolio/artifacts/j20qrn6n_professional-photo.jpg"
               alt="Dhanush Repaka"
               className="w-full h-full object-cover object-center"
               style={{ 
@@ -20,7 +20,7 @@ const Header = ({ data, scrollToSection }) => {
                 objectFit: 'cover'
               }}
               onError={(e) => {
-                e.target.src = "https://customer-assets.emergentagent.com/job_dhanush-portfolio/artifacts/j20qrn6n_professional-photo.jpg";
+                e.target.src = process.env.PUBLIC_URL + "/images/dhanush-profile.jpg";
               }}
             />
           </div>
