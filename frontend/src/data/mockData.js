@@ -65,7 +65,8 @@ export const mockData = {
         year: "2025",
         type: "certification",
         details: "Successfully completed comprehensive AI programme covering machine learning, ethics, and practical applications",
-        status: "Completed"
+        status: "Completed",
+        hasCertificate: true
       },
       {
         degree: "Certified AI Professional (CAIP)",
