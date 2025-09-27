@@ -18,6 +18,12 @@ const Education = ({ data }) => {
       issuer: "Tata Consultancy Services Limited",
       pdfUrl: "/images/certificates/internship-cert.pdf",
       fileName: "tcs-internship-certificate.pdf"
+    },
+    "Certified AI Professional (CAIP)": {
+      title: "Certified AI Professional (CAIP)",
+      issuer: "University of Oxford",
+      pdfUrl: "/images/certificates/caip-cert.pdf",
+      fileName: "oxford-caip-certificate.pdf"
     }
   };
 
