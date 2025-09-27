@@ -99,8 +99,12 @@ const Contact = ({ data }) => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-50/50 p-8 rounded-lg">
-            <h3 className="text-2xl font-medium text-gray-900 mb-6">Send a Message</h3>
+          <div className="bg-gradient-to-br from-gray-50 to-blue-50/30 p-8 rounded-2xl border border-gray-100 shadow-sm">
+            <h3 className="text-2xl font-medium text-gray-900 mb-2 flex items-center">
+              <MessageSquare className="text-blue-600 mr-2" size={24} />
+              Send a Message
+            </h3>
+            <p className="text-gray-600 mb-6 text-sm">I'd love to hear about your projects and opportunities!</p>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
