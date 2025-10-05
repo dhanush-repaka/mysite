@@ -69,6 +69,14 @@ export const mockData = {
         hasCertificate: true
       },
       {
+        degree: "Oxford Artificial Intelligence Programme - CPD Certificate",
+        institution: "University of Oxford",
+        year: "2025", 
+        type: "certification",
+        details: "Continuing Professional Development (CPD) certificate for Oxford AI Programme completion",
+        hasCertificate: true
+      },
+      {
         degree: "Certified AI Professional (CAIP)",
         institution: "University of Oxford",
         year: "2025",
