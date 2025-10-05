@@ -36,6 +36,14 @@ const Education = ({ data }) => {
       type: "digital",
       issueDate: "September 5, 2025",
       credentialId: "655aa12f-f46f-40b3-ac31-64a88fe38657"
+    },
+    "Oxford Artificial Intelligence Programme - CPD Certificate": {
+      title: "Oxford Artificial Intelligence Programme - CPD Certificate",
+      issuer: "University of Oxford",
+      pdfUrl: "https://customer-assets.emergentagent.com/job_dhanush-portfolio/artifacts/e58wz68h_Oxford%20Artificial%20Intelligence%20Programme-29_07_2025-Dhanush%20Repaka.pdf",
+      fileName: "oxford-cpd-certificate.pdf",
+      type: "pdf",
+      issueDate: "July 29, 2025"
     }
   };
 
