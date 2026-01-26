@@ -71,7 +71,7 @@ export const mockData = {
         institution: "University of Oxford",
         year: "2025",
         type: "certification",
-        link: "https://oxford.credential.getsmarter.com/d80939e7-a755-4f18-8ab8-2ff9abbc4063#acc.cHRCrQ3j"
+        link: `${process.env.PUBLIC_URL || ''}/certs/Oxford Artificial Intelligence Programme-29_07_2025-Dhanush Repaka.pdf`
       },
       {
         degree: "Certified AI Professional (CAIP)",

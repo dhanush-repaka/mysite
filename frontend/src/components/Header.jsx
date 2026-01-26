@@ -152,7 +152,7 @@ const Header = ({ data, scrollToSection }) => {
             {/* Photo container */}
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-purple-500/50 bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-1">
               <motion.img
-                src={`${process.env.PUBLIC_URL || ''}/images/professional-photo.jpg`}
+                src={`${process.env.PUBLIC_URL || ''}/images/444BDFC9-735F-44A5-A570-D5FB8533390D_1_105_c.jpeg`}
                 alt="Dhanush Repaka"
                 className="w-full h-full object-cover rounded-full"
                 whileHover={{ scale: 1.1 }}
