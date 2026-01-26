@@ -1,5 +1,5 @@
 import React from "react";
-import { GraduationCap, Award, Sparkles } from "lucide-react";
+import { GraduationCap, Award, Sparkles, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Education = ({ data }) => {
@@ -101,9 +101,23 @@ const Education = ({ data }) => {
                 </motion.div>
                 
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
-                    {item.degree}
-                  </h3>
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors flex-1">
+                      {item.degree}
+                    </h3>
+                    {item.link && (
+                      <motion.a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-400 hover:text-purple-400 transition-colors flex-shrink-0"
+                        whileHover={{ scale: 1.2, rotate: 15 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <ExternalLink size={20} />
+                      </motion.a>
+                    )}
+                  </div>
                   <p className="text-gray-400 mb-4 text-lg">{item.institution}</p>
                   <div className="flex items-center justify-between">
                     <motion.span

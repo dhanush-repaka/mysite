@@ -63,8 +63,18 @@ export const mockData = {
         degree: "Oxford Artificial Intelligence Programme",
         institution: "Oxford University",
         year: "2025",
-        type: "certification"
+        type: "certification",
+        link: "" // Add your certification link here
       }
+      // TODO: Add your other certifications here with links
+      // Example format:
+      // {
+      //   degree: "Certification Name",
+      //   institution: "Issuing Organization",
+      //   year: "YYYY",
+      //   type: "certification",
+      //   link: "https://certificate-verification-link.com"
+      // }
     ]
   },
 
