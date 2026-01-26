@@ -9,6 +9,7 @@ import Contact from "./Contact";
 import BlogSection from "./BlogSection";
 import Navigation from "./Navigation";
 import { mockData } from "../data/mockData";
+import { motion } from "framer-motion";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("header");
@@ -38,41 +39,103 @@ const Portfolio = () => {
     }
   };
 
+  // Animation variants for sections
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#0a0a0a] via-[#1a1a2e] to-[#16213e]">
       <Navigation activeSection={activeSection} scrollToSection={scrollToSection} />
       
       <div id="header">
         <Header data={mockData.header} scrollToSection={scrollToSection} />
       </div>
       
-      <div id="about" className="section-spacing">
+      <motion.div
+        id="about"
+        className="section-spacing"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <AboutMe data={mockData.about} />
-      </div>
+      </motion.div>
       
-      <div id="experience" className="section-spacing">
+      <motion.div
+        id="experience"
+        className="section-spacing"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <Experience data={mockData.experience} />
-      </div>
+      </motion.div>
       
-      <div id="education" className="section-spacing">
+      <motion.div
+        id="education"
+        className="section-spacing"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <Education data={mockData.education} />
-      </div>
+      </motion.div>
       
-      <div id="achievements" className="section-spacing">
+      <motion.div
+        id="achievements"
+        className="section-spacing"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <Achievements data={mockData.achievements} />
-      </div>
+      </motion.div>
       
-      <div id="skills" className="section-spacing">
+      <motion.div
+        id="skills"
+        className="section-spacing"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <Skills data={mockData.skills} />
-      </div>
+      </motion.div>
       
-      <div id="contact" className="section-spacing">
+      <motion.div
+        id="contact"
+        className="section-spacing"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <Contact data={mockData.contact} />
-      </div>
+      </motion.div>
       
-      <div id="blog" className="section-spacing">
+      <motion.div
+        id="blog"
+        className="section-spacing"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <BlogSection />
-      </div>
+      </motion.div>
     </div>
   );
 };

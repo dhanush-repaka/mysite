@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Mail, Linkedin, Send, MessageSquare } from "lucide-react";
+import { Mail, Linkedin, Send, MessageSquare, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useToast } from "../hooks/use-toast";
+import { motion } from "framer-motion";
 
 const Contact = ({ data }) => {
   const [formData, setFormData] = useState({
@@ -37,74 +38,149 @@ const Contact = ({ data }) => {
     }, 1000);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-tight">
+    <section className="py-32 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div
+            className="inline-flex items-center justify-center mb-6"
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          >
+            <Sparkles className="text-purple-400" size={32} />
+          </motion.div>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 tracking-tight gradient-text">
             {data.title}
           </h2>
-          <div className="w-16 h-0.5 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          <motion.div
+            className="w-24 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 mx-auto rounded-full mb-8"
+            initial={{ width: 0 }}
+            whileInView={{ width: 96 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3 }}
+          />
+          <motion.p
+            className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+          >
             {data.description}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <motion.div
+          className="grid md:grid-cols-2 gap-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {/* Contact Information */}
-          <div className="space-y-8">
+          <motion.div className="space-y-8" variants={itemVariants}>
             <div>
-              <h3 className="text-2xl font-medium text-gray-900 mb-6">Let's Connect</h3>
+              <h3 className="text-3xl font-bold text-white mb-8 gradient-text-static">Let's Connect</h3>
               <div className="space-y-6">
-                <a
+                <motion.a
                   href={`mailto:${data.email}`}
-                  className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors duration-300 group"
+                  className="flex items-center space-x-4 p-6 modern-card group relative overflow-hidden"
+                  whileHover={{ x: 10, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <div className="p-3 bg-blue-100 rounded-full group-hover:bg-blue-200 transition-colors duration-300">
-                    <Mail className="text-blue-600" size={20} />
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-purple-500/0 to-blue-500/0 group-hover:from-purple-500/20 group-hover:to-blue-500/20 transition-all duration-500"
+                  />
+                  <div className="p-4 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-xl border border-purple-500/30 group-hover:border-purple-500/60 transition-colors">
+                    <Mail className="text-purple-400" size={24} />
                   </div>
-                  <div>
-                    <p className="font-medium text-gray-900">Email</p>
-                    <p className="text-gray-600">{data.email}</p>
+                  <div className="relative z-10">
+                    <p className="font-semibold text-white text-lg">Email</p>
+                    <p className="text-gray-400">{data.email}</p>
                   </div>
-                </a>
+                </motion.a>
 
-                <a
+                <motion.a
                   href={data.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors duration-300 group"
+                  className="flex items-center space-x-4 p-6 modern-card group relative overflow-hidden"
+                  whileHover={{ x: 10, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <div className="p-3 bg-blue-100 rounded-full group-hover:bg-blue-200 transition-colors duration-300">
-                    <Linkedin className="text-blue-600" size={20} />
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-500"
+                  />
+                  <div className="p-4 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl border border-blue-500/30 group-hover:border-blue-500/60 transition-colors">
+                    <Linkedin className="text-blue-400" size={24} />
                   </div>
-                  <div>
-                    <p className="font-medium text-gray-900">LinkedIn</p>
-                    <p className="text-gray-600">Connect with me</p>
+                  <div className="relative z-10">
+                    <p className="font-semibold text-white text-lg">LinkedIn</p>
+                    <p className="text-gray-400">Connect with me</p>
                   </div>
-                </a>
+                </motion.a>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg">
-              <div className="flex items-center space-x-3 mb-4">
-                <MessageSquare className="text-blue-600" size={24} />
-                <h4 className="font-medium text-gray-900">Quick Response</h4>
+            <motion.div
+              className="modern-card p-8 bg-gradient-to-br from-purple-500/10 to-blue-500/10 border-purple-500/30"
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="flex items-center space-x-4 mb-4">
+                <MessageSquare className="text-purple-400" size={28} />
+                <h4 className="font-bold text-white text-xl">Quick Response</h4>
               </div>
-              <p className="text-gray-700 text-sm">
+              <p className="text-gray-300 leading-relaxed">
                 I typically respond to messages within 24 hours. For urgent matters, 
                 feel free to reach out via LinkedIn for faster communication.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Contact Form */}
-          <div className="bg-gray-50/50 p-8 rounded-lg">
-            <h3 className="text-2xl font-medium text-gray-900 mb-6">Send a Message</h3>
+          <motion.div
+            className="modern-card p-10"
+            variants={itemVariants}
+            whileHover={{ scale: 1.01 }}
+          >
+            <h3 className="text-3xl font-bold text-white mb-8 gradient-text-static">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
                     Name
                   </label>
                   <Input
@@ -115,11 +191,11 @@ const Contact = ({ data }) => {
                     onChange={handleChange}
                     required
                     placeholder="Your name"
-                    className="w-full"
+                    className="w-full bg-white/5 border-white/20 text-white placeholder:text-gray-500 focus:border-purple-500"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
                     Email
                   </label>
                   <Input
@@ -130,13 +206,13 @@ const Contact = ({ data }) => {
                     onChange={handleChange}
                     required
                     placeholder="your@email.com"
-                    className="w-full"
+                    className="w-full bg-white/5 border-white/20 text-white placeholder:text-gray-500 focus:border-purple-500"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="subject" className="block text-sm font-semibold text-gray-300 mb-2">
                   Subject
                 </label>
                 <Input
@@ -147,43 +223,45 @@ const Contact = ({ data }) => {
                   onChange={handleChange}
                   required
                   placeholder="What would you like to discuss?"
-                  className="w-full"
+                  className="w-full bg-white/5 border-white/20 text-white placeholder:text-gray-500 focus:border-purple-500"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2">
                   Message
                 </label>
                 <Textarea
                   id="message"
                   name="message"
-                  rows={5}
+                  rows={6}
                   value={formData.message}
                   onChange={handleChange}
                   required
                   placeholder="Tell me more about your project or idea..."
-                  className="w-full"
+                  className="w-full bg-white/5 border-white/20 text-white placeholder:text-gray-500 focus:border-purple-500"
                 />
               </div>
 
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 flex items-center justify-center space-x-2"
-              >
-                {isSubmitting ? (
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                ) : (
-                  <>
-                    <Send size={18} />
-                    <span>Send Message</span>
-                  </>
-                )}
-              </Button>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white py-6 flex items-center justify-center space-x-2 text-lg font-semibold border-0"
+                >
+                  {isSubmitting ? (
+                    <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  ) : (
+                    <>
+                      <Send size={20} />
+                      <span>Send Message</span>
+                    </>
+                  )}
+                </Button>
+              </motion.div>
             </form>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
