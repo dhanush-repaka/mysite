@@ -60,21 +60,40 @@ export const mockData = {
         type: "degree"
       },
       {
-        degree: "Oxford Artificial Intelligence Programme",
-        institution: "Oxford University",
+        degree: "Artificial Intelligence Programme",
+        institution: "University of Oxford",
         year: "2025",
         type: "certification",
-        link: "" // Add your certification link here
+        link: "" // Add certification verification link
+      },
+      {
+        degree: "Oxford Artificial Intelligence Programme - CPD Certificate",
+        institution: "University of Oxford",
+        year: "2025",
+        type: "certification",
+        link: "" // Add CPD certificate verification link
+      },
+      {
+        degree: "Certified AI Professional (CAIP)",
+        institution: "University of Oxford",
+        year: "2025",
+        type: "certification",
+        link: "" // Add CAIP certificate verification link
+      },
+      {
+        degree: "Tricentis Tosca Fundamentals - Automating Web Application Testing (AS1)",
+        institution: "Tricentis Certified",
+        year: "2023",
+        type: "certification",
+        link: "" // Add Tricentis certificate verification link
+      },
+      {
+        degree: "Project Internship - Cloud Infrastructure Automation for Test Environments",
+        institution: "Tata Consultancy Services Limited",
+        year: "2019",
+        type: "internship",
+        link: "" // Add internship certificate link if available
       }
-      // TODO: Add your other certifications here with links
-      // Example format:
-      // {
-      //   degree: "Certification Name",
-      //   institution: "Issuing Organization",
-      //   year: "YYYY",
-      //   type: "certification",
-      //   link: "https://certificate-verification-link.com"
-      // }
     ]
   },
 

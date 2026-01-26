@@ -79,6 +79,8 @@ const Education = ({ data }) => {
                 className={`absolute inset-0 bg-gradient-to-br ${
                   item.type === 'degree'
                     ? 'from-purple-500/0 to-blue-500/0 group-hover:from-purple-500/20 group-hover:to-blue-500/20'
+                    : item.type === 'internship'
+                    ? 'from-green-500/0 to-emerald-500/0 group-hover:from-green-500/20 group-hover:to-emerald-500/20'
                     : 'from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/20 group-hover:to-purple-500/20'
                 } transition-all duration-500 rounded-2xl`}
               />
@@ -88,6 +90,8 @@ const Education = ({ data }) => {
                   className={`p-4 rounded-2xl ${
                     item.type === 'degree'
                       ? 'bg-gradient-to-br from-purple-500/20 to-blue-500/20 border border-purple-500/30'
+                      : item.type === 'internship'
+                      ? 'bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30'
                       : 'bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30'
                   }`}
                   whileHover={{ scale: 1.2, rotate: 10 }}
@@ -95,6 +99,8 @@ const Education = ({ data }) => {
                 >
                   {item.type === 'degree' ? (
                     <GraduationCap className="text-purple-400" size={32} />
+                  ) : item.type === 'internship' ? (
+                    <Award className="text-green-400" size={32} />
                   ) : (
                     <Award className="text-blue-400" size={32} />
                   )}
@@ -124,11 +130,13 @@ const Education = ({ data }) => {
                       className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold border ${
                         item.type === 'degree'
                           ? 'bg-purple-500/10 text-purple-400 border-purple-500/30'
+                          : item.type === 'internship'
+                          ? 'bg-green-500/10 text-green-400 border-green-500/30'
                           : 'bg-blue-500/10 text-blue-400 border-blue-500/30'
                       }`}
                       whileHover={{ scale: 1.1 }}
                     >
-                      {item.type === 'degree' ? 'Degree' : 'Certification'}
+                      {item.type === 'degree' ? 'Degree' : item.type === 'internship' ? 'Internship' : 'Certification'}
                     </motion.span>
                     <span className="text-lg font-bold text-white">{item.year}</span>
                   </div>
