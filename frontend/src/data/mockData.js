@@ -64,21 +64,21 @@ export const mockData = {
         institution: "University of Oxford",
         year: "2025",
         type: "certification",
-        link: "" // Add certification verification link
+        link: "https://oxford.credential.getsmarter.com/d80939e7-a755-4f18-8ab8-2ff9abbc4063#acc.cHRCrQ3j"
       },
       {
         degree: "Oxford Artificial Intelligence Programme - CPD Certificate",
         institution: "University of Oxford",
         year: "2025",
         type: "certification",
-        link: "" // Add CPD certificate verification link
+        link: "https://oxford.credential.getsmarter.com/d80939e7-a755-4f18-8ab8-2ff9abbc4063#acc.cHRCrQ3j"
       },
       {
         degree: "Certified AI Professional (CAIP)",
         institution: "University of Oxford",
         year: "2025",
         type: "certification",
-        link: "" // Add CAIP certificate verification link
+        link: "https://oxford.credential.getsmarter.com/d80939e7-a755-4f18-8ab8-2ff9abbc4063#acc.cHRCrQ3j"
       },
       {
         degree: "Tricentis Tosca Fundamentals - Automating Web Application Testing (AS1)",
