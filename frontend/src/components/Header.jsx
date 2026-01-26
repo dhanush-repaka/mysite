@@ -157,6 +157,9 @@ const Header = ({ data, scrollToSection }) => {
                 className="w-full h-full object-cover rounded-full"
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.3 }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                }}
               />
             </div>
           </motion.div>

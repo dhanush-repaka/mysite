@@ -38,6 +38,7 @@ jobs:
         run: yarn build
         env:
           PUBLIC_URL: ''
+          CI: false
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
