@@ -94,7 +94,7 @@ const BlogSection = () => {
             >
               <div className="flex items-center justify-center space-x-3 text-purple-400">
                 <Calendar size={20} />
-                <span className="text-sm font-semibold">Expected Launch: Q2 2025</span>
+                <span className="text-sm font-semibold">Launching Soon - 2025</span>
               </div>
             </motion.div>
           </div>
