@@ -78,7 +78,7 @@ export const mockData = {
         institution: "University of Oxford",
         year: "2025",
         type: "certification",
-        link: "https://oxford.credential.getsmarter.com/d80939e7-a755-4f18-8ab8-2ff9abbc4063#acc.cHRCrQ3j"
+        link: "https://www.virtualbadge.io/certificate-validator?credential=655aa12f-f46f-40b3-ac31-64a88fe38657"
       },
       {
         degree: "Tricentis Tosca Fundamentals - Automating Web Application Testing (AS1)",
