@@ -54,6 +54,13 @@ export const mockData = {
     title: "Education & Certifications",
     items: [
       {
+        degree: "Applied Generative AI Specialization",
+        institution: "Purdue University Online & Simplilearn",
+        year: "2026",
+        type: "certification",
+        link: "https://success.simplilearn.com/b968f26b-6582-4ca2-9850-4b7523cad59d#acc.Jh0XiAay"
+      },
+      {
         degree: "Bachelor of Technology in Information Technology",
         institution: "Anil Neerukonda Institute of Technology and Sciences (ANITS)",
         year: "2019",
